@@ -1,0 +1,19 @@
+# Basic K8s to get app up and running
+
+# 1. create namespace to house example app kubectl create ns example-app
+# 2. within namespace init deployment manifest file -> kubectl apply -n example-app -f .\deployments\deployment.yaml
+# 3. within namespace init config map manifest -> kubectl apply -n example-app -f .\configmaps\configmap.yaml
+# 4. within namespace init secrets manifest -> kubectl apply -n example-app -f .\secrets\secret.yaml
+# 5. check if app is up and running -> kubectl example-app get pods
+
+
+# Nginx ingress controller
+
+# 6. create namespace for ingress-nginx service -> kubectl apply -n example-app -f .\ingress\controllers\nginx\namespace.yaml
+# 7. create service account for ingress controllervin namespace-> kubectl apply -n example-app -f .\ingress\controllers\nginx\serviceaccount.yaml
+# 8. create permissions for ingress controller -> kubectl apply -n example-app -f .\ingress\controllers\nginx\clusterrole.yaml
+# 9. bind roles to service account -> kubectl apply -n example-app -f .\ingress\controllers\nginx\clusterrolebinding.yaml
+# 10. create config map ingress controller -> kubectl apply -n example-app -f .\ingress\controllers\nginx\configmap.yaml
+# 11. create custom snippets config map ingress controller -> kubectl apply -n example-app -f .\ingress\controllers\nginx\customsnippetsconfigmap.yaml
+# 12. init deployment file for ingress controller -> kubectl apply -n example-app -f .\ingress\controllers\nginx\deployment.yaml
+# 13. check if ingress controller is up and running -> kubectl -n <namespace> get pods 
