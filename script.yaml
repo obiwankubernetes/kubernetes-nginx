@@ -17,3 +17,8 @@
 # 11. create custom snippets config map ingress controller -> kubectl apply -n example-app -f .\ingress\controllers\nginx\customsnippetsconfigmap.yaml
 # 12. init deployment file for ingress controller -> kubectl apply -n example-app -f .\ingress\controllers\nginx\deployment.yaml
 # 13. check if ingress controller is up and running -> kubectl -n <namespace> get pods 
+# 14. init load balancer service on service.yaml file for nginx ingress controller -> kubectl apply -n example-app -f .\ingress\controllers\nginx\service.yaml
+# 15. init tls cert -> kubectl apply -n example-app -f .\ingress\controllers\nginx\tlssecret.yaml
+# 16. init nginx rules -> kubectl apply -n example-app -f .\ingress\nginxruleexample.yaml
+# 17. check to see if app works on specificed dns -> go to dns listed in nginxruleexample.yaml in browser ... <marcel.host>
+# 28. can add differnt paths for different/multiple ports
